@@ -1,0 +1,104 @@
+:root {
+  --bg: #fff5ef;
+  --panel: #fffaf7;
+  --ink: #3e2032;
+  --lime: #8c2956;
+  --orange: #9a4323;
+  --muted: #6d485b;
+  --line: #dec3d0;
+  --rose: #f9c5d9;
+  --lilac: #eaddf7;
+  --serif: "Instrument Serif", Georgia, serif;
+}
+body {background:var(--bg)}
+.top {min-height:66px}
+.brand-mark {background:var(--rose);color:var(--ink);border-radius:8px;transform:rotate(-8deg)}
+.sound {border-radius:100px}
+.hero {padding-block:72px 90px}
+.hero h1, .letter-intro h2 {
+  font:400 clamp(4.2rem,8.8vw,8.2rem)/.86 var(--serif);
+  letter-spacing:-.025em;
+  text-transform:none;
+}
+.hero h1 em,.letter-intro em {display:block;font-style:italic}
+.intro {max-width:440px}
+.birthday-actions {display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.birthday-link {font-weight:700;color:var(--lime);text-underline-offset:4px}
+.button {border-radius:100px}
+.primary,.play {color:white}
+.primary:not(:disabled):hover,.play:hover {background:var(--ink);color:white}
+.hero-art {max-width:465px;width:calc(100% - 24px);justify-self:center}
+.hero-art:before {border:2px solid #be638c;border-radius:50% 50% 20px 20px / 48% 48% 20px 20px;inset:-10px -14px 0 8px}
+.hero-frame {aspect-ratio:.99;border-radius:50% 50% 16px 16px / 48% 48% 16px 16px}
+.hero-frame img {object-position:50% 39%}
+.athlete-tag {background:#fff8ed;color:var(--ink);box-shadow:6px 6px 0 #e29ab9;border-radius:5px}
+.date-stamp {background:var(--rose);border-radius:50%;color:var(--ink);top:6%;right:0}
+.hero-heart {
+  position:absolute;right:1%;bottom:2%;font:400 5.5rem/.7 var(--serif);
+  color:#fff8ed;text-shadow:0 2px 8px #321927aa;animation:heart-float 3.4s ease-in-out infinite;
+}
+@keyframes heart-float {
+  0%,100% {transform:translateY(0) rotate(12deg)}
+  50% {transform:translateY(-10px) rotate(1deg)}
+}
+.ticker {background:var(--rose);color:var(--ink)}
+.letter-section {background:radial-gradient(ellipse at 8% 15%,#f9d7e7,transparent 55%),#fff9f4;border-bottom:1px solid var(--line)}
+.letter-layout {display:grid;grid-template-columns:.78fr 1.22fr;align-items:start;gap:36px}
+.letter-intro h2 {font-size:clamp(3.7rem,7.2vw,6.7rem)}
+.birthday-letter,.memory {background:#fffdfa;border:1px solid var(--line);border-radius:17px}
+.birthday-letter {box-shadow:0 12px 34px #8c295619}
+summary {list-style:none;cursor:pointer}
+summary::-webkit-details-marker {display:none}
+summary:focus-visible {outline:3px solid var(--orange);outline-offset:4px;border-radius:12px}
+.birthday-letter summary {
+  display:flex;align-items:center;gap:15px;padding:17px 20px;
+  font:400 clamp(1.9rem,4vw,2.7rem)/1 var(--serif);color:var(--ink);
+}
+.letter-seal {
+  display:grid;place-items:center;flex:none;width:43px;height:43px;
+  background:var(--rose);border-radius:50%;font:1.25rem system-ui;color:var(--lime);
+}
+.letter-arrow {margin-left:auto;font:1.1rem var(--mono);transition:transform .25s}
+.birthday-letter[open] .letter-arrow {transform:rotate(180deg)}
+.letter-body {padding:4px clamp(20px,4vw,36px) 24px;font-size:1.05rem}
+.letter-body p + p {margin-top:14px}
+.letter-signature {color:var(--lime);font:italic 2.4rem/1 var(--serif)}
+.birthday-letter[open] .letter-body,.memory[open] p {animation:letter-in .36s ease-out both}
+@keyframes letter-in {from {opacity:0;transform:translateY(8px)}}
+.memory-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px;align-items:start}
+.memory {background:#ffe7ef}
+.memory:nth-child(2) {background:var(--lilac)}
+.memory:nth-child(3) {background:#ffe9cf}
+.memory summary {display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 16px;font-weight:700}
+.memory summary span {color:var(--lime);font-size:1.2rem}
+.memory p {padding:0 16px 15px;color:var(--muted)}
+.game-card {border-radius:16px;overflow:hidden}
+.sled-art {background:repeating-linear-gradient(145deg,#f5d8ea 0 18px,#eec8df 18px 19px)}
+.wall-art {background:#ffe4d5}
+.target {background:repeating-radial-gradient(circle,#a7452933 0 8px,#a7452966 9px 10px,#ff865900 11px 18px)}
+.ball {background:#d75f46}
+.reaction-art {background:var(--lilac)}
+.lights i:nth-child(3) {background:#fb91bf}
+.zone,.progress i,.track .push-fill {background:#f18eb5}
+.needle {background:#ffb46e}
+.photo-section {background:#fbe2ee}
+.photo-slot {background:#fffaf7;border-radius:5px}
+.reel-section {background:#fff5ef}
+.reel-card {border-radius:13px;overflow:hidden}
+.reel-play {background:var(--rose);color:var(--ink)}
+.reel-player.is-playing {box-shadow:0 0 40px #ef9fc766}
+.finish {background:radial-gradient(ellipse at 25% 50%,#f5d4e9,transparent 64%),#fff7f2}
+.medal-ribbon {background:repeating-linear-gradient(90deg,#bb4a7a 0 16px,#a63a68 16px 23px)}
+.close {background:var(--ink);color:white;border-radius:50%}
+dialog::backdrop {background:#321728dd}
+.confetti {z-index:15}
+@media(max-width:780px) {
+  .letter-layout {grid-template-columns:1fr;gap:22px}
+}
+@media(max-width:620px) {
+  .hero {padding-block:36px 58px}
+  .hero h1 {font-size:clamp(3.65rem,14vw,5.8rem)}
+  .hero-frame {aspect-ratio:1.22}
+  .memory-grid {grid-template-columns:1fr}
+  .letter-section {scroll-margin-top:10px}
+}

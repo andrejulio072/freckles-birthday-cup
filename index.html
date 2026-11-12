@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Three events, one birthday champion. A HYROX-inspired arcade for Lauren.">
+<meta name="theme-color" content="#fff5ef">
+<title>The Freckles Birthday Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="arcade.js" defer></script>
+<link rel="stylesheet" href="reels/reels.css">
+<script src="reels/reels.js" defer></script>
+<link rel="stylesheet" href="birthday.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">F<span>♥</span></span> Freckles Cup</a>
+  <nav aria-label="Page sections"><a href="#letter">Letter</a><a href="#arcade">Arcade</a><a href="#photos">Photos</a><a href="#reels">Reels</a><a href="#finish">Podium</a></nav>
+  <button class="sound" id="sound" aria-pressed="false" type="button">Game sound off</button>
+</header>
+<main id="top">
+  <section class="hero wrap" aria-labelledby="birthday">
+    <div class="hero-copy">
+      <p class="eyebrow"><i></i> 11 November · For Lauren</p>
+      <h1 id="birthday">Happy birthday,<em>Freckles.</em></h1>
+      <p class="intro">Sorry this landed a day late, Freckles. I wanted to make you something that would make you laugh the way you always made us laugh at the gym.</p>
+      <div class="birthday-actions">
+        <a class="button primary" id="open-letter" href="#letter">Open your birthday letter <span aria-hidden="true">♥</span></a>
+        <a class="birthday-link" href="#arcade">Play the birthday cup</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-frame"><img src="photos/lauren-5.webp" alt="Lauren striking a pose on a blue stair railing" fetchpriority="high"></div>
+      <div class="athlete-tag"><span>ATHLETE 001</span><strong>LAUREN</strong><span>TEAM FRECKLES · IRELAND</span></div>
+      <span class="hero-heart" aria-hidden="true">♡</span>
+      <div class="date-stamp" aria-hidden="true">11<span>NOV</span></div>
+    </div>
+  </section>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>✦ CAKE IS RACE FUEL　 ✦ ONE MORE REP, APPARENTLY　 ✦ TEAM FRECKLES　</span><span>✦ CAKE IS RACE FUEL　 ✦ ONE MORE REP, APPARENTLY　 ✦ TEAM FRECKLES　</span></div></div>
+  <section class="letter-section section" id="letter" aria-labelledby="letter-title">
+    <div class="wrap letter-layout">
+      <div class="letter-intro">
+        <p class="eyebrow">A letter from Andre</p>
+        <h2 id="letter-title">The gym misses <em>your laugh.</em></h2>
+      </div>
+      <details class="birthday-letter">
+        <summary><span class="letter-seal" aria-hidden="true">♥</span> To Freckles <span class="letter-arrow" aria-hidden="true">↓</span></summary>
+        <div class="letter-body">
+          <p>Lauren, working with you was genuinely one of my favourite parts of being at the gym. You could be halfway through a serious conversation and suddenly make me laugh so hard I’d forget what we were talking about. And somehow you turned my PT hoodie, my car and a stair railing into a whole marketing campaign. I still laugh looking at those photos.</p>
+          <p>Since you left, people miss the energy you brought in with you. I do too. There was something about hearing you laugh from across the gym that made the shift feel a bit lighter. I don’t think I ever told you how much I appreciated that, or how much fun it was getting to work with you.</p>
+          <p>I’m sorry this didn’t reach you on your actual birthday. I hope you had a lovely day, and I hope this gives you a bit of the joy you gave us. Happy belated birthday, Freckles. I’m really glad we met.</p>
+          <p class="letter-signature">Andre <span aria-hidden="true">♡</span></p>
+        </div>
+      </details>
+    </div>
+    <div class="wrap memory-grid" aria-label="Three little notes for Lauren">
+      <details class="memory"><summary>Best laugh in the gym <span aria-hidden="true">✿</span></summary><p>Some days I heard you laughing before I even knew you were in. That’s one of the things I miss most.</p></details>
+      <details class="memory"><summary>Head of marketing <span aria-hidden="true">✦</span></summary><p>You borrowed a hoodie and somehow became the face of the whole business. I’m still waiting for the invoice.</p></details>
+      <details class="memory"><summary>Birthday wildcard <span aria-hidden="true">♥</span></summary><p>One day off from counting everyone else’s reps. If anyone asks, Andre said cake counts as recovery.</p></details>
+    </div>
+  </section>
+  <section class="wrap section" id="arcade">
+    <div class="section-head reveal"><div><p class="eyebrow">THE BIRTHDAY HYROX</p><h2>Race arcade</h2></div><p>Three mini-games. Set your best scores and finish all three to unlock Lauren’s medal.</p></div>
+    <div class="score-strip"><span>EVENTS COMPLETED</span><div class="progress"><i id="progress-fill"></i></div><strong id="events-completed">0 / 3</strong></div>
+    <div class="game-grid">
+      <article class="game-card"><div class="game-art sled-art" aria-hidden="true"><b>»</b><b>»</b><b>»</b></div><div class="game-body"><p class="eyebrow">01 / SPEED</p><h3>Sled Sprint</h3><p>Get that sled moving. Hammer the push button for eight seconds.</p><div class="game-bottom"><button type="button" class="button play" data-game="sled">Play <span aria-hidden="true">↗</span></button><span class="best" id="best-sled">Best —</span></div></div></article>
+      <article class="game-card"><div class="game-art wall-art" aria-hidden="true"><div class="target"></div><i class="ball"></i></div><div class="game-body"><p class="eyebrow">02 / TIMING</p><h3>Wall Ball Zone</h3><p>Release in the pink zone. You’ve got six throws to hit the target.</p><div class="game-bottom"><button type="button" class="button play" data-game="wall">Play <span aria-hidden="true">↗</span></button><span class="best" id="best-wall">Best —</span></div></div></article>
+      <article class="game-card"><div class="game-art reaction-art" aria-hidden="true"><div class="lights"><i></i><i></i><i></i></div></div><div class="game-body"><p class="eyebrow">03 / REACTION</p><h3>Beat the Buzzer</h3><p>Wait for GO, then hit the button. Jump the start and the attempt is void.</p><div class="game-bottom"><button type="button" class="button play" data-game="reaction">Play <span aria-hidden="true">↗</span></button><span class="best" id="best-reaction">Best —</span></div></div></article>
+    </div>
+  </section>
+  <section class="photo-section section" id="photos"><div class="wrap">
+    <div class="section-head reveal"><div><p class="eyebrow">RACE-DAY EVIDENCE</p><h2>Photo finish</h2></div><p>Every good race has a few photos nobody remembers agreeing to.</p></div>
+    <div class="photo-grid" id="photo-grid"></div>
+  </div></section>
+  <section class="reel-section section" id="reels" aria-labelledby="reels-heading"><div class="wrap">
+  <div class="section-head"><div><p class="eyebrow">Lauren on Instagram</p><h2 id="reels-heading">The highlight reel</h2></div><p>Seven clips from Lauren’s very unofficial stint in marketing. Swipe to browse. Tap a clip to play it with music.</p></div>
+  <div class="reel-strip">
+    <button class="reel-card" type="button" data-clip="reels/1000207595-music.mp4">
+      <span class="reel-poster"><img src="reels/1000207595.webp" width="360" height="640" alt="" loading="lazy"><span class="reel-play" aria-hidden="true">▶</span></span>
+      <span class="reel-label">The marketing department</span>
+    </button>
+    <button class="reel-card" type="button" data-clip="reels/1000207597-music.mp4">
+      <span class="reel-poster"><img src="reels/1000207597.webp" width="360" height="640" alt="" loading="lazy"><span class="reel-play" aria-hidden="true">▶</span></span>
+      <span class="reel-label">The hostile takeover</span>
+    </button>
+    <button class="reel-card" type="button" data-clip="reels/1000207599-music.mp4">
+      <span class="reel-poster"><img src="reels/1000207599.webp" width="360" height="640" alt="" loading="lazy"><span class="reel-play" aria-hidden="true">▶</span></span>
+      <span class="reel-label">Flexible marketing</span>
+    </button>
+    <button class="reel-card" type="button" data-clip="reels/1000207601-music.mp4">
+      <span class="reel-poster"><img src="reels/1000207601.webp" width="360" height="640" alt="" loading="lazy"><span class="reel-play" aria-hidden="true">▶</span></span>
+      <span class="reel-label">The uniform reveal</span>
+    </button>
+    <button class="reel-card" type="button" data-clip="reels/1000207603-music.mp4">
+      <span class="reel-poster"><img src="reels/1000207603.webp" width="360" height="640" alt="" loading="lazy"><span class="reel-play" aria-hidden="true">▶</span></span>
+      <span class="reel-label">Stairs were optional</span>
+    </button>
+    <button class="reel-card" type="button" data-clip="reels/1000207605-music.mp4">
+      <span class="reel-poster"><img src="reels/1000207605.webp" width="360" height="640" alt="" loading="lazy"><span class="reel-play" aria-hidden="true">▶</span></span>
+      <span class="reel-label">The company spokesperson</span>
+    </button>
+    <button class="reel-card" type="button" data-clip="reels/1000207607-music.mp4">
+      <span class="reel-poster"><img src="reels/1000207607.webp" width="360" height="640" alt="" loading="lazy"><span class="reel-play" aria-hidden="true">▶</span></span>
+      <span class="reel-label">Four sizes up</span>
+    </button>
+  </div>
+</div></section>
+<section class="finish section" id="finish"><div class="wrap finish-grid">
+    <div class="medal-art" aria-hidden="true"><div class="medal-ribbon"></div><div class="medal-face"><span>FRECKLES CUP</span><strong>01</strong><span>★ ★ ★</span></div></div>
+    <div class="finish-copy reveal"><p class="eyebrow">THE PODIUM</p><h2>First place.<br><em>Obviously.</em></h2><p class="note">First place in HYROX is up to you. First place in making the whole gym laugh was already yours.</p><p class="signature">Happy birthday, Freckles. ♡</p>
+    <button class="button primary" id="celebrate" type="button" disabled>Claim your medal <span aria-hidden="true">✦</span></button>
+    <p class="finish-status" id="medal-status" role="status">Finish the three arcade events to unlock.</p></div>
+  </div></section>
+</main>
+<footer class="wrap footer"><span>MADE FOR LAUREN · 11 NOVEMBER</span><a href="#top">BACK TO TOP ↑</a></footer>
+<dialog id="game-dialog" aria-labelledby="game-title"><div class="game-modal">
+  <button class="close" type="button" aria-label="Close game" data-close="game-dialog">×</button>
+  <p class="eyebrow" id="game-type"></p><h2 id="game-title"></h2>
+  <p id="game-help"></p>
+  <div class="game-stage" id="game-stage"></div>
+  <div id="game-status" role="status"></div>
+  <div class="game-actions"><button type="button" class="button primary" id="game-action"></button><button type="button" class="button secondary" id="try-again" hidden>Play again</button></div>
+</div></dialog>
+<dialog id="photo-viewer" aria-label="Photo Finish">
+  <button class="close" type="button" aria-label="Close photo" data-close="photo-viewer">×</button>
+  <img id="full-photo" alt="">
+  <div class="photo-controls"><button class="button secondary" id="previous-photo" type="button" aria-label="Previous photo">←</button><span id="photo-count" aria-live="polite"></span><button class="button secondary" id="next-photo" type="button" aria-label="Next photo">→</button></div>
+</dialog>
+<dialog class="reel-player" id="reel-player" aria-labelledby="reel-title">
+  <header><div class="reel-title-group">
+    <span class="reel-beat" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <strong id="reel-title"></strong>
+  </div><form method="dialog"><button type="submit" aria-label="Close video">×</button></form></header>
+  <video controls playsinline preload="none" aria-labelledby="reel-title"></video>
+  <div class="reel-progress" aria-hidden="true"><i></i></div>
+  <div class="reel-controls"><button type="button" id="reel-previous" aria-label="Previous clip">←</button><span id="reel-count" aria-live="polite"></span><button type="button" id="reel-next" aria-label="Next clip">→</button></div>
+</dialog>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+</body>
+</html>
