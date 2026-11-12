@@ -102,3 +102,32 @@ dialog::backdrop {background:#321728dd}
   .memory-grid {grid-template-columns:1fr}
   .letter-section {scroll-margin-top:10px}
 }
+
+/* Keep navigation and media controls usable on touchscreens and short viewports. */
+.top nav a,.sound {min-height:44px}
+.top nav a {display:inline-flex;align-items:center}
+.game-actions {flex-wrap:wrap}
+#game-action {min-height:52px}
+.reel-browse {display:flex;justify-content:flex-end;gap:8px;margin-bottom:8px}
+.reel-browse .button,.photo-controls .button {min-width:48px}
+.reel-strip {scroll-padding-inline:4px}
+.reel-player {max-height:calc(100dvh - 16px);overscroll-behavior:contain}
+.reel-player video {height:min(66dvh,calc(100dvh - 168px),620px)}
+#photo-viewer,#game-dialog {overscroll-behavior:contain}
+#full-photo {max-height:calc(100dvh - 92px)}
+#game-title {padding-right:26px;overflow-wrap:anywhere}
+
+@media(max-width:760px) {
+  .top {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 10px;padding-top:6px}
+  .top .sound {grid-row:1;grid-column:2}
+  .top nav {display:grid;grid-column:1/-1;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+  .top nav a {justify-content:center;padding-inline:2px;font-size:.68rem;letter-spacing:0}
+  .reel-browse {justify-content:flex-start}
+}
+@media(max-width:380px) {
+  .hero h1 {font-size:clamp(2.9rem,14vw,3.65rem)}
+  .game-card {grid-template-columns:minmax(0,1fr)}
+  .game-art {height:78px;min-height:0}
+  .game-bottom .best {font-size:.7rem}
+  .finish h2,.section-head h2 {font-size:clamp(2.8rem,13vw,3.9rem)}
+}

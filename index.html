@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="style.css">
 <script src="arcade.js" defer></script>
 <link rel="stylesheet" href="reels/reels.css">
-<script src="reels/reels.js" defer></script>
-<link rel="stylesheet" href="birthday.css">
+<script src="reels/reels.js?v=mobile" defer></script>
+<link rel="stylesheet" href="birthday.css?v=mobile">
 </head>
 <body>
 <header class="wrap top">
@@ -79,8 +79,12 @@
     <div class="photo-grid" id="photo-grid"></div>
   </div></section>
   <section class="reel-section section" id="reels" aria-labelledby="reels-heading"><div class="wrap">
-  <div class="section-head"><div><p class="eyebrow">Lauren on Instagram</p><h2 id="reels-heading">The highlight reel</h2></div><p>Turns out the shift swap came with seven reels. Swipe through the footage, then tap a clip to watch it with music.</p></div>
-  <div class="reel-strip">
+  <div class="section-head"><div><p class="eyebrow">Lauren on Instagram</p><h2 id="reels-heading">The highlight reel</h2></div><p>Turns out the shift swap came with seven reels. Swipe or use the arrows to browse, then tap a clip to watch it with music.</p></div>
+  <div class="reel-browse">
+    <button class="button secondary" type="button" id="browse-back" aria-label="Browse previous reels" aria-controls="reel-strip">←</button>
+    <button class="button secondary" type="button" id="browse-forward" aria-label="Browse more reels" aria-controls="reel-strip">→</button>
+  </div>
+  <div class="reel-strip" id="reel-strip">
     <button class="reel-card" type="button" data-clip="reels/1000207595-music.mp4">
       <span class="reel-poster"><img src="reels/1000207595.webp" width="360" height="640" alt="" loading="lazy"><span class="reel-play" aria-hidden="true">▶</span></span>
       <span class="reel-label">The marketing department</span>

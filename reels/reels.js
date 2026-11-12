@@ -47,3 +47,18 @@ reelDialog.addEventListener('close', () => {
   reelVideo.load();
   reelTrigger?.focus();
 });
+
+const reelStrip = document.querySelector('#reel-strip');
+const browseBack = document.querySelector('#browse-back');
+const browseForward = document.querySelector('#browse-forward');
+function browseReels(direction) {
+  const step = reelCards[1].offsetLeft - reelCards[0].offsetLeft;
+  reelStrip.scrollBy({left: direction * step, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+}
+browseBack.addEventListener('click', () => browseReels(-1));
+browseForward.addEventListener('click', () => browseReels(1));
+reelDialog.addEventListener('keydown', (event) => {
+  if (event.target === reelVideo) return;
+  if (event.key === 'ArrowLeft') showReel(currentReel - 1);
+  if (event.key === 'ArrowRight') showReel(currentReel + 1);
+});
