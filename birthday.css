@@ -65,10 +65,10 @@ summary:focus-visible {outline:3px solid var(--orange);outline-offset:4px;border
 .letter-signature {color:var(--lime);font:italic 2.4rem/1 var(--serif)}
 .birthday-letter[open] .letter-body,.memory[open] p {animation:letter-in .36s ease-out both}
 @keyframes letter-in {from {opacity:0;transform:translateY(8px)}}
-.memory-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px;align-items:start}
+.memory-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:24px;align-items:start}
 .memory {background:#ffe7ef}
-.memory:nth-child(2) {background:var(--lilac)}
-.memory:nth-child(3) {background:#ffe9cf}
+.memory:nth-child(3n+2) {background:var(--lilac)}
+.memory:nth-child(3n) {background:#ffe9cf}
 .memory summary {display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 16px;font-weight:700}
 .memory summary span {color:var(--lime);font-size:1.2rem}
 .memory p {padding:0 16px 15px;color:var(--muted)}
