@@ -1,0 +1,34 @@
+.bonus-heading {margin:32px 0 12px;font-size:clamp(1.8rem,5vw,2.6rem)}
+.bonus-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.bonus-card {display:grid;grid-template-columns:32% minmax(0,1fr);background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.bonus-card .game-body {align-items:flex-start;min-width:0}
+.bonus-art {display:grid;place-content:center;place-items:center;gap:8px;overflow:hidden;background:var(--lilac);color:var(--lime)}
+.bonus-art span {font-size:clamp(2rem,6vw,3.8rem)}
+.parking-art span {animation:parking-rock 2.7s ease-in-out infinite}
+.parking-art b {border:1px solid currentColor;border-radius:6px;padding:1px 9px}
+.episode-art {background:#ffe5d7}
+.episode-art span {animation:episode-pulse 2.5s ease-in-out infinite}
+.episode-art i {font:600 .74rem var(--mono)}
+@keyframes parking-rock {50% {transform:translateX(12px) rotate(-9deg)}}
+@keyframes episode-pulse {50% {transform:scale(1.16)}}
+@keyframes bonus-pop {50% {transform:scale(1.08)}}
+@keyframes episode-in {from {opacity:.3;transform:translateY(5px)}}
+#bonus-dialog {overscroll-behavior:contain}
+#bonus-title {padding-right:36px}
+#bonus-stage {display:grid;gap:10px;margin-top:12px}
+#bonus-stage h3 {font-size:clamp(1.45rem,5vw,2.25rem)}
+#bonus-status {margin:10px 0;color:var(--muted);font-weight:600}
+.parking-grid {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;width:min(100%,310px);margin-inline:auto}
+.parking-grid span {display:grid;place-items:center;height:clamp(28px,8vw,40px);background:#f2e6e9;border-radius:5px}
+.parking-grid .parking-cone {color:#9a4323;background:#ffe5d7}
+.parking-grid .parking-bay {color:var(--ink);background:#efd9f7;border:1px solid var(--lime);font-weight:800}
+.parking-grid .car-cell {animation:bonus-pop .24s ease-out}
+.parking-controls {display:grid;grid-template-columns:repeat(4,minmax(44px,1fr));gap:5px}
+.parking-controls button {padding-inline:4px;font-size:1.2rem;min-height:48px}
+.episode-options {display:grid;gap:6px;animation:episode-in .25s ease-out}
+.episode-options button {text-align:left;justify-content:flex-start;text-transform:none;letter-spacing:0;white-space:normal}
+.episode-options .episode-answer {opacity:1;border-color:var(--lime);background:var(--rose)}
+.bonus-win {animation:bonus-pop .38s ease-out}
+@media(max-width:680px) {.bonus-grid {grid-template-columns:1fr}}
+@media(max-width:360px) {.bonus-card {grid-template-columns:27% minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce) {.bonus-art span,.parking-grid .car-cell,.episode-options,.bonus-win {animation:none}}

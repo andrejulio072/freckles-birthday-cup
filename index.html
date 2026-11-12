@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="reels/reels.css">
 <script src="reels/reels.js?v=mobile" defer></script>
 <link rel="stylesheet" href="birthday.css?v=mobile">
+<link rel="stylesheet" href="bonus.css">
+<script src="bonus.js" defer></script>
 </head>
 <body>
 <header class="wrap top">
@@ -67,12 +69,17 @@
     </div>
   </section>
   <section class="wrap section" id="arcade">
-    <div class="section-head reveal"><div><p class="eyebrow">THE BIRTHDAY HYROX</p><h2>Race arcade</h2></div><p>Three events for your medal, Freckles. I was going to add reverse parking as a fourth, but I couldn’t get past the tutorial.</p></div>
+    <div class="section-head reveal"><div><p class="eyebrow">THE BIRTHDAY HYROX</p><h2>Race arcade</h2></div><p>Three events for your medal, Freckles. Then there’s reverse parking. I’ve left that one to you.</p></div>
     <div class="score-strip"><span>EVENTS COMPLETED</span><div class="progress"><i id="progress-fill"></i></div><strong id="events-completed">0 / 3</strong></div>
     <div class="game-grid">
       <article class="game-card"><div class="game-art sled-art" aria-hidden="true"><b>»</b><b>»</b><b>»</b></div><div class="game-body"><p class="eyebrow">01 / SPEED</p><h3>Sled Sprint</h3><p>Get that sled moving. Hammer the push button for eight seconds.</p><div class="game-bottom"><button type="button" class="button play" data-game="sled">Play <span aria-hidden="true">↗</span></button><span class="best" id="best-sled">Best —</span></div></div></article>
       <article class="game-card"><div class="game-art wall-art" aria-hidden="true"><div class="target"></div><i class="ball"></i></div><div class="game-body"><p class="eyebrow">02 / TIMING</p><h3>Wall Ball Zone</h3><p>Release in the pink zone. You’ve got six throws to hit the target.</p><div class="game-bottom"><button type="button" class="button play" data-game="wall">Play <span aria-hidden="true">↗</span></button><span class="best" id="best-wall">Best —</span></div></div></article>
       <article class="game-card"><div class="game-art reaction-art" aria-hidden="true"><div class="lights"><i></i><i></i><i></i></div></div><div class="game-body"><p class="eyebrow">03 / REACTION</p><h3>Beat the Buzzer</h3><p>Wait for GO, then hit the button. Jump the start and the attempt is void.</p><div class="game-bottom"><button type="button" class="button play" data-game="reaction">Play <span aria-hidden="true">↗</span></button><span class="best" id="best-reaction">Best —</span></div></div></article>
+    </div>
+    <h3 class="bonus-heading">After the race</h3>
+    <div class="bonus-grid">
+      <article class="bonus-card"><div class="bonus-art parking-art" aria-hidden="true"><span>🚗</span><b>P</b></div><div class="game-body"><h3>Park It, Andre</h3><p>Get my car into the bay before you start laughing from the office. Actually, take your time.</p><button class="button play" type="button" data-bonus="parking">Park the car <span aria-hidden="true">↗</span></button></div></article>
+      <article class="bonus-card"><div class="bonus-art episode-art" aria-hidden="true"><span>▶</span><i>EP. 01</i></div><div class="game-body"><h3>Previously on Andre</h3><p>Three episodes from the series you used to stop and listen to mid-shift. Guess what happens next.</p><button class="button play" type="button" data-bonus="episodes">Watch the recap <span aria-hidden="true">↗</span></button></div></article>
     </div>
   </section>
   <section class="photo-section section" id="photos"><div class="wrap">
@@ -124,6 +131,16 @@
   </div></section>
 </main>
 <footer class="wrap footer"><span>MADE FOR LAUREN · 11 NOVEMBER</span><a href="#top">BACK TO TOP ↑</a></footer>
+<dialog id="bonus-dialog" aria-labelledby="bonus-title">
+  <div class="game-modal">
+    <form method="dialog"><button class="close" aria-label="Close bonus game">×</button></form>
+    <h2 id="bonus-title"></h2>
+    <p id="bonus-help"></p>
+    <div id="bonus-stage"></div>
+    <p id="bonus-status" role="status"></p>
+    <button class="button primary" id="bonus-retry" type="button" hidden>Play again</button>
+  </div>
+</dialog>
 <dialog id="game-dialog" aria-labelledby="game-title"><div class="game-modal">
   <button class="close" type="button" aria-label="Close game" data-close="game-dialog">×</button>
   <p class="eyebrow" id="game-type"></p><h2 id="game-title"></h2>
