@@ -245,6 +245,7 @@ gameDialog.addEventListener('keydown', (event) => {
   if (!event.repeat) performAction();
 });
 gameDialog.addEventListener('close', () => {
+  if (gameDialog.open) return;
   cancelGameWork();
   state = undefined;
   opener?.focus({preventScroll:true});

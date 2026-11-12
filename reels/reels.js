@@ -42,6 +42,7 @@ reelVideo.addEventListener('timeupdate', () => {
 });
 
 reelDialog.addEventListener('close', () => {
+  if (reelDialog.open) return;
   reelVideo.pause();
   reelVideo.removeAttribute('src');
   reelVideo.load();

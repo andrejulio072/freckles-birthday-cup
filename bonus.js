@@ -174,6 +174,7 @@ bonusDialog.addEventListener('keydown',event=>{
   if (!event.repeat) drive(event.key);
 });
 bonusDialog.addEventListener('close',()=>{
+  if (bonusDialog.open) return;
   clearTimeout(bonusTimer);
   bonusOpener?.focus({preventScroll:true});
 });
