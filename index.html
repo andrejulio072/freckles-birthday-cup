@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="birthday.css?v=mobile">
 <link rel="stylesheet" href="bonus.css?v=final">
 <script src="bonus.js?v=dialog" defer></script>
+<script src="birthday-music.js" defer></script>
 </head>
 <body>
 <header class="wrap top">
@@ -32,6 +33,8 @@
       <div class="birthday-actions">
         <a class="button primary" id="open-letter" href="#letter">Open your birthday letter <span aria-hidden="true">♥</span></a>
         <a class="birthday-link" href="#arcade">Play the birthday cup</a>
+        <button class="button secondary" id="birthday-music-toggle" type="button"><span aria-hidden="true">♫</span> <span class="music-label">Play birthday music</span></button>
+        <audio id="birthday-music" src="happy-birthday.mp3" preload="none"></audio>
       </div>
     </div>
     <div class="hero-art">
