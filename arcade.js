@@ -9,7 +9,7 @@ const games = {
 const captions = [
   'Lauren and Andre posing beside the gym banner', 'Lauren flexing beside the car',
   'Lauren celebrating beside the car', 'Lauren posing in front of the gym banner',
-  'Lauren striking a pose on the stair railing', 'Lauren flexing in her personal trainer hoodie',
+  'Lauren striking a pose on the stair railing', 'Lauren flexing in Andre’s oversized PT shirt',
   'A collage of Lauren’s gym poses', 'Another pose beside the gym banner'
 ];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
